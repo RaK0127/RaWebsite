@@ -1,5 +1,6 @@
 import os
 import boto3
+import sys
 
 # global variable which is used to track all the region data
 regions = []
@@ -15,7 +16,7 @@ def main(sess):
 		delete_unused_amis(sess)
 	except Exception as e:
 		print(e)
-		os.exit(1)
+		sys.exit(1)
 
 def delete_unused_amis(sess):
 	'''
